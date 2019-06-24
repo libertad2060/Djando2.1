@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+#import get_env_variable
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -31,6 +32,7 @@ ALLOWED_HOSTS = [u'libertad2060.pythonanywhere.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'modelo',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -75,10 +78,22 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+        'default': {
+                'ENGINE': 'django.db.backends.mysql',
+                'NAME': 'libertad2060$My_BBDD',
+                'USER': 'libertad2060',
+                'PASSWORD': 'Collage1',
+                'HOST': 'libertad2060.mysql.pythonanywhere-services.com',
+                'OPTIONS': {
+                    'sql_mode': 'traditional',
+                    }
+     # 'TEST': {
+            #    'NAME': 'libertad2060$test_My_BBDD',}
+
+    #'default': {
+     #   'ENGINE': 'django.db.backends.sqlite3',
+      #  'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+      }
 }
 
 
@@ -114,6 +129,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+MEDIA_ROOT = '/media/'
+MEDIA_URL = 'http://libertad2060.pythonanywhere.com/media/'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/

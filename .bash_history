@@ -46,3 +46,37 @@ python3.7 manage.py migrate mysite
 python3.7 manage.py migrate
 python3.7 manage.py createsuperuser
 root12
+source /home/libertad2060/project/myvenv/bin/activate
+pip install mysqlclient
+cd ..
+cd libertad2060/
+cd project/
+ll
+find -name post .
+find . -name post
+find . -name Post
+grep
+grep -hell
+grep -help
+grep --help
+grep -ri "post" *
+grep -ri "Post" *
+python3 manage.py makemigrations
+mysql --version
+mysql -v
+service mysql start
+service
+service status-all
+service --status-all
+service mysqld start
+sudo service mysql start
+su service mysql start
+service mysql start
+service
+service --status-all | grep +
+systemctl list-unit-files
+systemctl list-unit-files |grep mysql
+systemctl list-unit-files |grep am
+systemctl list-unit-files |grep um
+systemctl list-unit-files |grep sql
+exit
